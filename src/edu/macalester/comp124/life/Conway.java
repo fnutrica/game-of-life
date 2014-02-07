@@ -1,5 +1,6 @@
 package edu.macalester.comp124.life;
 
+
 /**
  * RuleSet implementing Conway's Game of Life.
  *
@@ -19,9 +20,24 @@ public class Conway implements RuleSet {
      * @return true if the cell should be alive in the next generation.
      */
     public boolean applyRules(boolean isAlive, int neighborCount) {
-        return true;
+        if (isAlive){
+            if (neighborCount<2){
+                return false;
+            }
+            if (neighborCount>3){
+                return false;
+            }
+            else return true;
+        }
+        else {
+            if (neighborCount==3){
+                return(true);
+            }
+            else return false;
+        }
     }
 }
+
 
 
 
